@@ -1,0 +1,51 @@
+.addfield {
+    border: solid 5px #545454;
+    width: 60%;
+    max-width: 800px;
+    padding: 16px 10px;
+    margin: 10px auto;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    input {
+        width: 90%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 24px;
+        color: #929292;
+    }
+
+    svg {
+        fill: #545454;
+        transition: 0.2s;
+        &:hover {
+            cursor: pointer;
+            fill: #55c3d9;
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 80%;
+
+        input {
+            font-size: 22px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        width: 80%;
+        margin: 4px auto;
+        padding: 10px 8px;
+        border: solid 4px #545454;
+        input {
+            font-size: 20px;
+        }
+        svg {
+            width: 36px;
+        }
+    }
+}
