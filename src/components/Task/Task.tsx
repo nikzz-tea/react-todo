@@ -2,12 +2,12 @@ import React from 'react';
 import './task.scss';
 
 import { useDispatch } from 'react-redux';
-import { doneUndone, removeItem, TTask } from '../../redux/taskSlice';
+import { toggleDone, removeItem, TTask } from '../../redux/taskSlice';
 
 const Task: React.FC<TTask> = (props) => {
   const dispatch = useDispatch();
 
-  const onCheck = () => dispatch(doneUndone(props.id));
+  const onCheck = () => dispatch(toggleDone(props.id));
 
   const onDelete = () => dispatch(removeItem(props.id));
 

@@ -1,4 +1,5 @@
 import Task from './components/Task/Task';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import './scss/app.scss';
 
 import { useSelector } from 'react-redux';
@@ -11,12 +12,14 @@ function App() {
   return (
     <div className="App">
       <h1 className="title">Todo App</h1>
-      <div className="container">
-        <AddField />
+      <AddField />
+      <TransitionGroup className="container">
         {tasks.map((task: TTask) => (
-          <Task key={task.id} {...task} />
+          <CSSTransition<undefined> key={task.id} timeout={500} classNames="task">
+            <Task key={task.id} {...task} />
+          </CSSTransition>
         ))}
-      </div>
+      </TransitionGroup>
     </div>
   );
 }

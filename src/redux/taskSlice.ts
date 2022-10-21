@@ -8,7 +8,7 @@ export type TTask = {
 
 const testOne: TTask = {
   id: 0,
-  title: 'Make it save in localStorage',
+  title: 'Add some animations',
   isDone: true
 };
 
@@ -27,7 +27,7 @@ const taskSlice = createSlice({
     addItem(state, action: PayloadAction<TTask>) {
       state.items.push(action.payload);
     },
-    doneUndone(state, action: PayloadAction<number>) {
+    toggleDone(state, action: PayloadAction<number>) {
       const itemFind = state.items.find((obj) => obj.id === action.payload);
       if (itemFind) {
         itemFind.isDone = !itemFind.isDone;
@@ -39,5 +39,5 @@ const taskSlice = createSlice({
   }
 });
 
-export const { addItem, doneUndone, removeItem } = taskSlice.actions;
+export const { addItem, toggleDone, removeItem } = taskSlice.actions;
 export default taskSlice.reducer;
