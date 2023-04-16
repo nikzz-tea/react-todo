@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './addfield.scss';
-
 import { useDispatch } from 'react-redux';
 import { addItem, TTask } from '../../redux/taskSlice';
+
+import './addfield.scss';
 
 const AddField: React.FC = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const AddField: React.FC = () => {
   const item: TTask = {
     id: Number(Date.now()),
     title: value,
-    isDone: false
+    isDone: false,
   };
 
   const onAdd = () => {

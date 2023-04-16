@@ -1,8 +1,8 @@
 import React from 'react';
-import './task.scss';
-
 import { useDispatch } from 'react-redux';
 import { toggleDone, removeItem, TTask } from '../../redux/taskSlice';
+
+import './task.scss';
 
 const Task: React.FC<TTask> = (props) => {
   const dispatch = useDispatch();
